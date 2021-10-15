@@ -1,1 +1,1 @@
-# story-renderer
+# story-schema
