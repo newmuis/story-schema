@@ -1,0 +1,16 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/settings/settings.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Configuration",
+  "type": "object",
+  "description": "Describes optional settings for story functionality.",
+  "properties": {
+    "analytics": {
+      "$ref": "analytics.schema.json"
+    },
+    "ads": {
+      "$ref": "ads.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

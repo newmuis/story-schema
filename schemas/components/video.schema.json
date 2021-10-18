@@ -1,0 +1,28 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/video.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Video Component",
+  "description": "Represents video content visible to users.",
+  "allOf": [
+    { "$ref": "#/definitions/videoComponentProperties" },
+    { "$ref": "interfaces/media-component.schema.json#/definitions/mediaComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "videoComponentProperties": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": { "$ref": "../types/id.schema.json" },
+        "hasAudio": {
+          "description": "Whether the video contains any audio.",
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

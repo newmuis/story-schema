@@ -1,0 +1,16 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/metadata/publisher.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Publisher",
+  "type": "object",
+  "description": "Describes metadata about a publisher of the story.",
+  "required": [
+    "name",
+    "logo"
+  ],
+  "properties": {
+    "name": { "type": "string" },
+    "logo": { "$ref": "../types/absolute-url.schema.json"}
+  },
+  "additionalProperties": false
+}

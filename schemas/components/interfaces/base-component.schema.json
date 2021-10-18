@@ -1,0 +1,21 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/interfaces/base-component.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Base Component",
+  "description": "Provides component property definitions for components that are usable within a story.",
+  "definitions": {
+    "baseComponentProperties": {
+      "type": "object",
+      "properties": {
+        "style": { "$ref": "#/definitions/style" }
+      }
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "spacingAfter": { "type": "number" },
+        "spacingBefore": { "type": "number" }
+      }
+    }
+  }
+}

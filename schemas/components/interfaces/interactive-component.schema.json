@@ -1,0 +1,73 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/interfaces/interactive-component.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Base Interactive Component",
+  "type": "object",
+  "description": "Describes an interactive component that is usable within a story.",
+  "required": [
+    "id"
+  ],
+  "definitions": {
+    "interactiveComponentProperties": {
+      "type": "object",
+      "required": [
+        "id",
+        "endpoint"
+      ],
+      "properties": {
+        "id": { "$ref": "../../types/id.schema.json" },
+        "endpoint": { "$ref": "../../types/absolute-url.schema.json" },
+        "theme": { "$ref": "../../types/theme.schema.json#/definitions/standardTheme" },
+        "style": {
+          "type": "object",
+          "properties": {
+            "chip": { "enum": [ "flat", "shadow", "transparent" ] },
+            "accentColor": { "$ref": "../../types/color.schema.json" },
+            "promptTextColor": { "$ref": "../../types/color.schema.json" },
+            "promptBackgroundColor": { "$ref": "../../types/color.schema.json" },
+            "promptTextAlignment": { "$ref": "../../types/anchor.schema.json#/definitions/anchorPoint" }
+          }
+        },
+        "prompt": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "description": "Adds a prompt to the top of the component.",
+              "type": "string"
+            },
+            "size": {
+              "description": "Controls the font-size of prompt text. Can be small, medium (default), large. Large prompts will hold up to 3 lines of text, other sizes will hold up to 4 lines of text.", 
+              "enum": [ "small", "medium", "large" ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "imageOption": {
+      "type": "object",
+      "required": [
+        "image",
+        "alt"
+      ],
+      "properties": {
+        "image": { "$ref": "../../types/absolute-url.schema.json" },
+        "alt": { "$ref": "../../types/alt-text.schema.json" },
+        "confetti": { "$ref": "../../types/emoji.schema.json" }
+      },
+      "additionalProperties": false
+    },
+    "textOption": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": { "$ref": "../../types/cta-text.schema.json" },
+        "confetti": { "$ref": "../../types/emoji.schema.json" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

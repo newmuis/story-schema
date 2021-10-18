@@ -1,0 +1,86 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/structure/primary-action.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Page Primary Action",
+  "type": "object",
+  "description": "A primary action for a given page of a story.",
+  "oneOf": [
+    { "$ref": "#/definitions/inlineAttachment" },
+    { "$ref": "#/definitions/pageOutlink" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "inlineAttachment": {
+      "type": "object",
+      "description": "A button that opens an additional pane of information, related to the content of the story page, that a user can view. See [<amp-story-page-attachment>](https://amp.dev/documentation/components/amp-story-page-attachment/).",
+      "required": ["htmlContent"],
+      "properties": {
+        "cta": {
+          "description": "Describes the visual style of the call-to-action button generated for the page attachment.",
+          "type": "object",
+          "properties": {
+            "theme": {
+              "$ref": "../types/theme.schema.json#/definitions/standardTheme"
+            },
+            "text": {
+              "$ref": "../types/cta-text.schema.json"
+            },
+            "images": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "../types/absolute-url.schema.json"
+              }
+            }
+          }
+        },
+        "header": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "The title shown in the header above the attachment content."
+            }
+          }
+        },
+        "htmlContent": {
+          "description": "Valid AMP HTML for usage in a page attachment.  See [supported components](https://amp.dev/documentation/components/amp-story-page-attachment/#supported-amp-components-in-a-page-attachment).",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pageOutlink": {
+      "type": "object",
+      "description": "A button that links to an external URL.  See [<amp-story-page-outlink>](https://amp.dev/documentation/components/amp-story-page-outlink/)",
+      "required": ["destinationUrl"],
+      "properties": {
+        "cta": {
+          "description": "Describes the visual style of the call-to-action button generated for the page attachment.",
+          "type": "object",
+          "properties": {
+            "theme": {
+              "oneOf": [
+                { "$ref": "../types/theme.schema.json#/definitions/standardTheme" },
+                { "$ref": "../types/theme.schema.json#/definitions/customTheme" }
+              ]
+            },
+            "text": {
+              "$ref": "../types/cta-text.schema.json"
+            },
+            "image": {
+              "$ref": "../types/absolute-url.schema.json"
+            }
+          }
+        },
+        "destinationUrl": {
+          "description": "The URL to navigate to.",
+          "$ref": "../types/absolute-url.schema.json"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/alt-text.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Defines alternative text that describes the page or its contents.",
+  "type": "string"
+}

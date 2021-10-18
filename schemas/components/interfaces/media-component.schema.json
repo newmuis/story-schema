@@ -1,0 +1,39 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/interfaces/media-component.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Base Component",
+  "description": "Provides component property definitions for components that are usable within a story.",
+  "definitions": {
+    "mediaComponentProperties": {
+      "type": "object",
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "aspectRatio": {
+          "description": "The aspect-ratio of the media.  If unspecified, the natural dimensions of the selected media source will be used if the component is displayed.",
+          "$ref": "../../types/aspect-ratio.schema.json"
+        },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/source" }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "url"
+      ],
+      "properties": {
+        "alt": { "$ref": "../../types/alt-text.schema.json" },
+        "url": { "$ref": "../../types/absolute-url.schema.json" },
+        "type": { "$ref": "../../types/media-type.schema.json" },
+        "bitrate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    }
+  }
+}

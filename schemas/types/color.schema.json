@@ -1,0 +1,7 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/color.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "Represents a valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).  Color names (e.g. 'AliceBlue') are not permitted.",
+  "pattern": "(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\\((?:\\d+%?(?:deg|rad|grad|turn)?(?:,|\\s)+){2,3}[\\s\/]*[\\d\\.]+%?\\))"
+}

@@ -1,0 +1,8 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/time.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "A positive [CSS time data type](https://developer.mozilla.org/en-US/docs/Web/CSS/time).",
+  "pattern": "^([0-9])*?\\.?([0-9])+(s|ms)$"
+}
+  

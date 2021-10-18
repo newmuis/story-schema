@@ -1,0 +1,23 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/settings/analytics.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Analytics",
+  "description": "Configures how analytics are reported for the story.",
+  "oneOf": [
+    { "$ref": "#/definitions/autoAnalyticsGtag" }
+  ],
+  "definitions": {
+    "autoAnalyticsGtag": {
+      "description": "Automatically report story analytics to Google Analytics, with no customization.",
+      "type": "object",
+      "required": [ "gtagId" ],
+      "properties": {
+        "gtagId": {
+          "description": "Google Analytics tracking ID",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/metadata/metadata.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Metadata",
+  "type": "object",
+  "description": "Metadata about a web story that can be used e.g. by platforms embedding or linking to the story.",
+  "required": [
+    "poster",
+    "publisher"
+  ],
+  "properties": {
+    "poster": {
+      "$ref": "poster.schema.json"
+    },
+    "publisher": {
+      "$ref": "publisher.schema.json"
+    },
+    "entity": {
+      "$ref": "publisher.schema.json"
+    },
+    "title": {
+      "description": "The title of the story.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

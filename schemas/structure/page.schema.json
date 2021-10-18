@@ -1,0 +1,70 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/structure/page.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Page",
+  "type": "object",
+  "description": "A single [page](https://amp.dev/documentation/components/amp-story-page/) of content for a story.",
+  "required": [
+    "id",
+    "layers"
+  ],
+  "properties": {
+    "id": {
+      "description": "A unique identifier for the page.",
+      "$ref": "../types/id.schema.json"
+    },
+    "layers": {
+      "type": "array",
+      "description": "A list of layers, ordered with the farthest back at the beginning of the array and the closest to the front at the end of the array.",
+      "items": {
+        "$ref": "layer.schema.json"
+      }
+    },
+    "primaryAction": {
+      "$ref": "primary-action.schema.json"
+    },
+    "advance": {
+      "description": "Determines how the page should advance.  Defaults to `manualAdvance` if unspecified.",
+      "oneOf": [
+        { "$ref": "#/definitions/manualAdvance" },
+        { "$ref": "#/definitions/mediaBasedAutoAdvance" },
+        { "$ref": "#/definitions/timeBasedAutoAdvance" }
+      ]
+    },
+    "alt": { "$ref": "../types/alt-text.schema.json" }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "manualAdvance": {
+      "type": "object",
+      "description": "Indicates that the page should advance only when a user has tapped.",
+      "properties": {
+        "manual": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "mediaBasedAutoAdvance": {
+      "type": "object",
+      "description": "Indicates that the page should advance automatically after the specified media element has completed playback.",
+      "properties": {
+        "media": {
+          "$ref": "../types/id.schema.json"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timeBasedAutoAdvance": {
+      "type": "object",
+      "description": "Indicates that the page should advance automatically after the specified duration has elapsed.",
+      "properties": {
+        "time": {
+          "$ref": "../types/time.schema.json"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

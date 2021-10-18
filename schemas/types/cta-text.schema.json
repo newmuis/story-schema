@@ -1,0 +1,8 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/cta-text.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "Text used to describe a call to action.",
+  "maxLength": 50
+}
+  

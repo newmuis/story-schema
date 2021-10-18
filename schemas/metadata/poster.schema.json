@@ -1,0 +1,25 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/metadata/poster.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Poster",
+  "type": "object",
+  "description": "Describes 'poster' images that are representative of a story without loading the content.",
+  "required": [
+    "portrait"
+  ],
+  "properties": {
+    "portrait": {
+      "description": "A URL to the story poster in portrait format (3x4 aspect ratio).",
+      "$ref": "../types/absolute-url.schema.json"
+    },
+    "square": {
+      "description": "A URL to the story poster in square format (1x1 aspect ratio).",
+      "$ref": "../types/absolute-url.schema.json"
+    },
+    "landscape": {
+      "description": "A URL to the story poster in landscape format (4x3 aspect ratio).",
+      "$ref": "../types/absolute-url.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

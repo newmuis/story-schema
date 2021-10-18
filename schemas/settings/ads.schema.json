@@ -1,0 +1,23 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/settings/ads.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Ads",
+  "description": "Configures how advertisements are reported for the story.",
+  "oneOf": [
+    { "$ref": "#/definitions/autoAdsDoubleclick" }
+  ],
+  "definitions": {
+    "autoAdsDoubleclick": {
+      "description": "Automatically insert story advertisements.",
+      "type": "object",
+      "required": [ "slot" ],
+      "properties": {
+        "slot": {
+          "description": "Full path of the ad unit with the network code and unit code.",
+          "type": "string"
+        }
+      },
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

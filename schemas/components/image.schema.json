@@ -1,0 +1,12 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/image.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Image Component",
+  "description": "Represents image content visible to users.",
+  "allOf": [
+    { "$ref": "interfaces/media-component.schema.json#/definitions/mediaComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false
+}

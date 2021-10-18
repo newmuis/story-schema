@@ -1,0 +1,7 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/media-type.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "The [media type](https://en.wikipedia.org/wiki/Media_type)."
+}
+  

@@ -1,0 +1,27 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/story.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story",
+  "type": "object",
+  "description": "A [web story](https://amp.dev/stories).",
+  "required": [
+    "metadata",
+    "pages"
+  ],
+  "properties": {
+    "pages": {
+      "type": "array",
+      "description": "A list of pages.  Pages will be traversed in sequential order unless otherwise specified.",
+      "items": {
+        "$ref": "structure/page.schema.json"
+      }
+    },
+    "metadata": {
+      "$ref": "metadata/metadata.schema.json"
+    },
+    "settings": {
+      "$ref": "settings/settings.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

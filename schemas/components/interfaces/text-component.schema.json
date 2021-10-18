@@ -1,0 +1,25 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/interfaces/text-component.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Base Component",
+  "type": "object",
+  "description": "Provides component property definitions for components that are usable within a story.",
+  "definitions": {
+    "textComponentProperties": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "description": "The text visible to the user.",
+          "type": "string"
+        },
+        "fontSize": {
+          "description": "The font size, proportional to the size of the layer.",
+          "type": "number"
+        }
+      }
+    }
+  }
+}

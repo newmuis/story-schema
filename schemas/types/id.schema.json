@@ -1,0 +1,7 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/id.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "An HTML ID.",
+  "pattern": "^[A-Za-z]+[\\w\\-:.]*$"
+}

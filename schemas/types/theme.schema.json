@@ -1,0 +1,21 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/theme.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Provides means of theming story components.",
+  "definitions": {
+    "standardTheme": {
+      "enum": [ "light", "dark" ]
+    },
+    "customTheme": {
+      "type": "object",
+      "required": [
+        "accentColor",
+        "accentElement"
+      ],
+      "properties": {
+        "accentColor": { "$ref": "color.schema.json" },
+        "accentElement": { "enum": [ "text", "background" ]}
+      }
+    }
+  }
+}

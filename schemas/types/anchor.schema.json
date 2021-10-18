@@ -1,0 +1,22 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/anchor.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Determines how to anchor an element.",
+  "type": "object",
+  "properties": {
+    "verticalAnchor": {
+      "description": "Determines anchoring across the vertical axis.  Defaults to 'center'.",
+      "$ref": "#/definitions/anchorPoint"
+    },
+    "horizontalAnchor": {
+      "description": "Determines anchoring across the horizontal axis.  Defaults to 'center'.",
+      "$ref": "#/definitions/anchorPoint"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "anchorPoint": {
+      "enum": [ "start", "center", "end" ]
+    }
+  }
+}

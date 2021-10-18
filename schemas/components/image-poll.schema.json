@@ -1,0 +1,29 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/image-poll.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Image Poll Component",
+  "description": "Represents an image poll interactive component.",
+  "allOf": [
+    { "$ref": "#/definitions/imagePollComponentProperties" },
+    { "$ref": "interfaces/interactive-component.schema.json#/definitions/interactiveComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "imagePollComponentProperties": {
+      "type": "object",
+      "required": [
+        "options"
+      ],
+      "properties": {
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": { "$ref": "interfaces/interactive-component.schema.json#/definitions/imageOption" }
+        }
+      }
+    }
+  }
+}

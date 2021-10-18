@@ -1,0 +1,12 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/text.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Text Component",
+  "description": "Represents text content visible to users.",
+  "allOf": [
+    { "$ref": "interfaces/text-component.schema.json#/definitions/textComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false
+}

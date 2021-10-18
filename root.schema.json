@@ -1,0 +1,5 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/root.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "schemas/story.schema.json"
+}

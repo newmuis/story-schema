@@ -1,0 +1,8 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/types/absolute-url.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "description": "An absolute HTTP or HTTPS URL, including the protocol.",
+  "pattern": "^https?://"
+}
+  

@@ -1,0 +1,118 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/structure/layer.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story Layer",
+  "type": "object",
+  "description": "A [layer](https://amp.dev/documentation/components/amp-story-grid-layer/) of content within a story.",
+  "properties": {
+    "sizing": {
+      "description": "Specifies the sizing of the layer itself.",
+      "oneOf": [
+        { "$ref": "#/definitions/sizeByAspectRatio" },
+        { "$ref": "#/definitions/sizeByPreset" }
+      ]
+    },
+    "content": {
+      "description": "The content of the layer.",
+      "oneOf": [
+        { "$ref": "#/definitions/layerContentFill" },
+        { "$ref": "#/definitions/layerContentVertical" },
+        { "$ref": "#/definitions/layerContentHorizontal" },
+        { "$ref": "#/definitions/layerContentThirds" }
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "sizeByAspectRatio": {
+      "type": "object",
+      "description": "The sizing of the layer is set to conform to the specified proportions. The font size, is set to the 1/10th of the resulting height to enable proportional content scaling.",
+      "properties": {
+        "aspectRatio": { "$ref": "../types/aspect-ratio.schema.json" },
+        "anchor": { "$ref": "../types/anchor.schema.json" }
+      }
+    },
+    "sizeByPreset": {
+      "description": "Specifies a responsiveness preset that configures the layer with an aspect-ratio and scaling-factor.  `background` layers are scaled up to cover letterboxed margins and may only contain the background asset (image or video).  `foreground` layers are not scaled and may contain all foreground assets.  The font size, is set to the 1/10th of the resulting height to enable proportional content scaling.",
+      "enum": [ "background", "foreground" ]
+    },
+    "layerContentFill": {
+      "type": "object",
+      "description": "Shows a single component full-bleed.",
+      "properties": {
+        "template": { "const": "fill" },
+        "component": {
+          "description": "The component to be shown full-bleed.",
+          "$ref": "#/definitions/usableInFillLayers"
+        }
+      }
+    },
+    "layerContentVertical": {
+      "type": "object",
+      "description": "Shows a list of components, organized vertically in sequential order.",
+      "properties": {
+        "template": { "const": "vertical" },
+        "components": {
+          "description": "The components to be displayed.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/usableInPageLayers"
+          }
+        }
+      }
+    },
+    "layerContentHorizontal": {
+      "type": "object",
+      "description": "Shows a list of components, organized horizontally in sequential order.",
+      "properties": {
+        "template": { "const": "horizontal" },
+        "components": {
+          "description": "The components to be displayed.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/usableInPageLayers"
+          }
+        }
+      }
+    },
+    "layerContentThirds": {
+      "type": "object",
+      "description": "Shows a list of components, organized horizontally in sequential order.",
+      "properties": {
+        "template": { "const": "thirds" },
+        "componentTopThird": {
+          "description": "The component to be shown in the top third.",
+          "$ref": "#/definitions/usableInPageLayers"
+        },
+        "componentMiddleThird": {
+          "description": "The component to be shown in the middle third.",
+          "$ref": "#/definitions/usableInPageLayers"
+        },
+        "componentBottomThird": {
+          "description": "The component to be shown in the bottom third.",
+          "$ref": "#/definitions/usableInPageLayers"
+        }
+      }
+    },
+    "usableInFillLayers": {
+      "oneOf": [
+        { "$ref": "../components/image.schema.json" },
+        { "$ref": "../components/video.schema.json" }
+      ]
+    },
+    "usableInPageLayers": {
+      "oneOf": [
+        { "$ref": "../components/text.schema.json" },
+        { "$ref": "../components/image.schema.json" },
+        { "$ref": "../components/video.schema.json" },
+        { "$ref": "../components/binary-poll.schema.json" },
+        { "$ref": "../components/poll.schema.json" },
+        { "$ref": "../components/image-poll.schema.json" },
+        { "$ref": "../components/quiz.schema.json" },
+        { "$ref": "../components/image-quiz.schema.json" }
+      ]
+    }
+  }
+}

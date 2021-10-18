@@ -1,0 +1,29 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/binary-poll.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Binary Poll Component",
+  "description": "Represents a binary poll interactive component.",
+  "allOf": [
+    { "$ref": "#/definitions/binaryPollComponentProperties" },
+    { "$ref": "interfaces/interactive-component.schema.json#/definitions/interactiveComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "binaryPollComponentProperties": {
+      "type": "object",
+      "required": [
+        "options"
+      ],
+      "properties": {
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "interfaces/interactive-component.schema.json#/definitions/textOption" }
+        }
+      }
+    }
+  }
+}
