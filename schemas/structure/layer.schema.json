@@ -102,6 +102,18 @@
         { "$ref": "../components/video.schema.json" }
       ]
     },
+    "usableInPageAttachment": {
+      "oneOf": [
+        { "$ref": "../components/text.schema.json" },
+        { "$ref": "../components/image.schema.json" },
+        { "$ref": "../components/video.schema.json" },
+        { "$ref": "../components/binary-poll.schema.json" },
+        { "$ref": "../components/poll.schema.json" },
+        { "$ref": "../components/image-poll.schema.json" },
+        { "$ref": "../components/quiz.schema.json" },
+        { "$ref": "../components/image-quiz.schema.json" }
+      ]
+    },
     "usableInPageLayers": {
       "oneOf": [
         { "$ref": "../components/text.schema.json" },

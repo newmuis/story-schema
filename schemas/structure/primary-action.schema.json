@@ -13,7 +13,7 @@
     "inlineAttachment": {
       "type": "object",
       "description": "A button that opens an additional pane of information, related to the content of the story page, that a user can view. See [<amp-story-page-attachment>](https://amp.dev/documentation/components/amp-story-page-attachment/).",
-      "required": ["htmlContent"],
+      "required": ["components"],
       "properties": {
         "cta": {
           "description": "Describes the visual style of the call-to-action button generated for the page attachment.",
@@ -45,9 +45,13 @@
             }
           }
         },
-        "htmlContent": {
-          "description": "Valid AMP HTML for usage in a page attachment.  See [supported components](https://amp.dev/documentation/components/amp-story-page-attachment/#supported-amp-components-in-a-page-attachment).",
-          "type": "string"
+        "components": {
+          "description": "The components to be displayed in the attachment pane, laid out vertically in sequential order.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "layer.schema.json#/definitions/usableInPageAttachment"
+          }
         }
       },
       "additionalProperties": false
