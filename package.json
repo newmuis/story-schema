@@ -17,7 +17,7 @@
     "clean": "del dist",
     "compile-schema": "make-dir dist && ajv compile -s 'root.schema.json' -r 'schemas/**/*.schema.json' -o 'dist/story-validator.js' --spec=draft2020 --all-errors=true",
     "copy-static": "make-dir dist && cpy '**/*' '../dist' --cwd=static --parents",
-    "docs": "make-dir dist/docs && generate-schema-doc schemas/story.schema.json dist/docs/index.html --config-file docs.config.json",
+    "docs": "make-dir docs && generate-schema-doc schemas/story.schema.json docs/index.html --config-file docs.config.json",
     "test": "jest"
   }
 }
