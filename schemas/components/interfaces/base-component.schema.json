@@ -29,6 +29,21 @@
         "yOffset": {
           "type": "number",
           "description": "The amount to offset the component along the y-axis.  The unit is 1/10 of the height of the layer."
+        },
+        "opacity": {
+          "type": "number",
+          "description": "The opacity of the component, as a float.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rotationDegrees": {
+          "type": "number",
+          "description": "The amount to rotate the component, in degrees.  Positive values indicate clockwise rotation, negative values indicate counter-clockwise rotation."
+        },
+        "scale": {
+          "type": "number",
+          "description": "The scale of the component, as a float, where 1.0 represents the component at its natural size.",
+          "exclusiveMinimum": 0
         }
       }
     },
