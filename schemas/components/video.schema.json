@@ -18,6 +18,7 @@
       ],
       "properties": {
         "id": { "$ref": "../types/id.schema.json" },
+        "captionsId": { "$ref": "../types/id.schema.json" },
         "hasAudio": {
           "description": "Whether the video contains any audio.",
           "type": "boolean"
