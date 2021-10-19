@@ -33,7 +33,7 @@
         "opacity": {
           "type": "number",
           "description": "The opacity of the component, as a float.",
-          "minimum": 0,
+          "exclusiveMinimum": 0,
           "maximum": 1
         },
         "rotationDegrees": {
