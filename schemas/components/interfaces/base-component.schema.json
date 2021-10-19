@@ -7,14 +7,55 @@
     "baseComponentProperties": {
       "type": "object",
       "properties": {
-        "style": { "$ref": "#/definitions/style" }
+        "style": { "$ref": "#/definitions/style" },
+        "animation": { "$ref": "#/definitions/animation" }
       }
     },
     "style": {
       "type": "object",
       "properties": {
         "spacingAfter": { "type": "number" },
-        "spacingBefore": { "type": "number" }
+        "spacingBefore": { "type": "number" },
+        "xOffset": { "type": "number" },
+        "yOffset": { "type": "number" }
+      }
+    },
+    "animation": {
+      "type": "object",
+      "properties": {
+        "entrance": {
+          "description": "Story [entrance animations](https://amp.dev/documentation/examples/visual-effects/amp_story_animations/).",
+          "type": "object",
+          "properties": {
+            "name": {
+              "enum": [
+                "drop",
+                "fade-in",
+                "fly-in-bottom",
+                "fly-in-left",
+                "fly-in-right",
+                "fly-in-top",
+                "pan-down",
+                "pan-left",
+                "pan-right",
+                "pan-up",
+                "pulse",
+                "rotate-in-left",
+                "rotate-in-right",
+                "scale-fade-down",
+                "scale-fade-up",
+                "twirl-in",
+                "whoosh-in-left",
+                "whoosh-in-right",
+                "zoom-in",
+                "zoom-out"
+              ]
+            },
+            "duration": { "$ref": "../../types/time.schema.json" },
+            "delay": { "$ref": "../../types/time.schema.json" },
+            "after": { "$ref": "../../types/id.schema.json" }
+          }    
+        }
       }
     }
   }
