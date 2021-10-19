@@ -1,0 +1,42 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/audio.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Captions Component",
+  "description": "Represents captions.",
+  "allOf": [
+    { "$ref": "#/definitions/captionComponentProperties" },
+    { "$ref": "interfaces/media-component.schema.json#/definitions/mediaComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "captionComponentProperties": {
+      "type": "object",
+      "required": [
+        "id",
+        "tracks"
+      ],
+      "properties": {
+        "id": { "$ref": "../types/id.schema.json" },
+        "tracks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/track"
+          }
+        }
+      }
+    },
+    "track": {
+      "type": "object",
+      "properties": {
+        "url": { "$ref": "../types/absolute-url.schema.json" },
+        "languageCode": {
+          "type": "string",
+          "description": "An [IETF BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag)."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$id": "https://github.com/newmuis/story-schema/schemas/components/audio.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Audio Component",
+  "description": "Represents playable audio content.",
+  "allOf": [
+    { "$ref": "#/definitions/audioComponentProperties" },
+    { "$ref": "interfaces/media-component.schema.json#/definitions/mediaComponentProperties" },
+    { "$ref": "interfaces/base-component.schema.json#/definitions/baseComponentProperties" }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "audioComponentProperties": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": { "$ref": "../types/id.schema.json" },
+        "captionsId": { "$ref": "../types/id.schema.json" }
+      }
+    }
+  }
+}
