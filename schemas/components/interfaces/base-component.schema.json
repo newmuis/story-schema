@@ -14,10 +14,22 @@
     "style": {
       "type": "object",
       "properties": {
-        "spacingAfter": { "type": "number" },
-        "spacingBefore": { "type": "number" },
-        "xOffset": { "type": "number" },
-        "yOffset": { "type": "number" }
+        "spacingAfter": { 
+          "type": "number",
+          "description": "The spacing to add after the component.  The unit is 1/10 of the height of the layer."
+        },
+        "spacingBefore": {
+          "type": "number",
+          "description": "The spacing to add before the component.  The unit is 1/10 of the height of the layer."
+        },
+        "xOffset": {
+          "type": "number",
+          "description": "The amount to offset the component along the x-axis.  The unit is 1/10 of the height of the layer."
+        },
+        "yOffset": {
+          "type": "number",
+          "description": "The amount to offset the component along the y-axis.  The unit is 1/10 of the height of the layer."
+        }
       }
     },
     "animation": {
